@@ -82,8 +82,11 @@ UserAppInit(void)
 		    while( (read_size = recv(client_sock , client_message , strlen(client_message) , 0)) > 0 )
 		    {
 		        //Send the message back to client
+			
+			int posture = client_message[0] -48;
 
-		    	printf("Message from client : %c\n", client_message[0]);
+		    	printf("Message from client : %d\n", posture);
+
 
 		        write(client_sock , client_message , strlen(client_message));
 		    	//printf("Message from client : %s\n", client_message);
