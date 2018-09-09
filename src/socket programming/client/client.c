@@ -41,8 +41,8 @@ int main(int argc , char *argv[])
     while(1)
     {
 
-	//-------------------------------------------------
-/*	
+ //-------------------------------------------------
+/* 
         printf("Enter message : ");
         scanf("%s" , message);
         printf("%d", strlen(message));
@@ -56,59 +56,63 @@ int main(int argc , char *argv[])
          
         //Receive a reply from the server
         if( recv(sock , server_reply , strlen(message)+4, 0) < 0)
- 	{
+  {
             puts("recv failed");
             break;
         }
          
         puts("Server reply :");
         puts(server_reply);
-*/	
-	//-----------------------------------------------------
+*/ 
+ //-----------------------------------------------------
 
-	int fd;
-	if((fd=serialOpen("/dev/ttyUSB2" , 9600)) < 0){
-		fprintf(stderr,"Unable to open serial device : %s\n", strerror(errno));
-		return 1;
+ int fd;
+ if((fd=serialOpen("/dev/rfcomm0" , 9600)) < 0){
+  fprintf(stderr,"Unable to open serial device : %s\n", strerror(errno));
+  return 1;
 
-	}
+ }
 
-	for(;;){
-		//putchar(serialGetchar(fd));
-		char posture = serialGetchar(fd);
+ for(;;){
+  //putchar(serialGetchar(fd));
+  int posture = serialGetchar(fd);
 
-			//Send some data
-			char char_arr[1];
-			char_arr[0] = posture;
+   //Send some data
+   char char_arr[1];
 
-			printf("%c\n" , posture);
-		        if( send(sock , char_arr , strlen(char_arr) , 0) < 0)
-		        {
-		            puts("Send failed");
-		            return 1;
-		        }
-		         
-		        //Receive a reply from the server
-		        if( recv(sock , server_reply , strlen(char_arr)+4 , 0) < 0)
-		 	{
-		            puts("recv failed");
-		            break;
-		        }
-		        
-			//printf("%s\n" , server_reply);			
+   //char -> int
+   char_arr[0] = posture -2 +48 ;
+
+   printf("%d\n" , posture-2);
+          if( send(sock , char_arr , strlen(char_arr) , 0) < 0)
+          {
+              puts("Send failed");
+              return 1;
+          }
+           
+          //Receive a reply from the server
+          if( recv(sock , server_reply , strlen(char_arr)+4 , 0) < 0)
+    {
+              puts("recv failed");
+              break;
+          }
+          
+   //printf("%s\n" , server_reply);   
  
-		        //puts(" Server reply :");
-			puts(" ");
-       			//puts(server_reply);
+          //puts(" Server reply :");
+   puts(" ");
+          //puts(server_reply);
 
-		fflush(stdout);
-	}
+  fflush(stdout);
+ }
          
         
 
-	
+ 
     }
      
     close(sock);
     return 0;
 }
+
+
