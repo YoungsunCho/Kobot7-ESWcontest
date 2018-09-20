@@ -18,14 +18,12 @@
 #include <cpu/bcm2835.h>
 #include "measureSleepState.h"
 #include "measureSnoring.h"
+#include "serverCommunication.h"
+#include "serverSoundSensor.h"
 
 #define GPIO_GPFSEL_IN 0x00
 #define GPIO_GPFSEL_OUT 0x01
 #define GPIO_PIN_NUMBER_06 0x06
-//#define GPIO_PIN_NUMBER_21 0x15
-#define GPIO_PIN_NUMBER_23 0x17
-#define GPIO_PIN_NUMBER_24 0x18
-
 #define GPIO_PIN_NUMBER_12 0x0c
 #define GPIO_PIN_NUMBER_13 0x0d
 #define GPIO_PIN_NUMBER_16 0x10
@@ -33,6 +31,8 @@
 #define GPIO_PIN_NUMBER_20 0x14
 #define GPIO_PIN_NUMBER_21 0x15
 #define GPIO_PIN_NUMBER_22 0x16
+#define GPIO_PIN_NUMBER_23 0x17
+#define GPIO_PIN_NUMBER_24 0x18
 #define GPIO_PIN_NUMBER_26 0x1a
 
 #define ON 1
@@ -49,9 +49,10 @@ int sleepState=0;
 int smartphoneScreen=0;
 int snoring=0;
 int vibration=0;
+int sound=-1;
 int preSound=0;
 int sleepPosture=0;
-int value1, value2, value3, value4, value5, value6;
+int postureValue=0;//get a value through TCP/IP
 int p[12];
 
 /*In measureSnoring*/
@@ -85,21 +86,7 @@ int testSnoring()
 
 void *UpdateValue1(void* arg)
 {
-//	while(1)
-//   {
-//		value1 = BspGpioGetValue(GPIO_PIN_NUMBER_21);
-//		printf("pressure value1 : %d \n", value1);
-//		value2 = BspGpioGetValue(GPIO_PIN_NUMBER_20);
-//		printf("pressure value2 : %d \n", value2);
-//		value3 = BspGpioGetValue(GPIO_PIN_NUMBER_26);
-//		printf("pressure value3 : %d \n", value3);
-//		value4= BspGpioGetValue(GPIO_PIN_NUMBER_16);
-//		printf("pressure value4 : %d \n", value4);
-//		value5= BspGpioGetValue(GPIO_PIN_NUMBER_12);
-//		printf("pressure value5 : %d \n", value5);
-//		//pressure = value1 + value2 + value3 + value4 + value5;
-//		ThreadDelay(200000000);
-//   }
+	serverSoundSensor();
 }
 
 void *UpdateValue2(void* arg)
@@ -112,27 +99,30 @@ void *UpdateValue2(void* arg)
 		p[2] = BspGpioGetValue(GPIO_PIN_NUMBER_13);
 		p[3] = BspGpioGetValue(GPIO_PIN_NUMBER_20);
 		p[4] = BspGpioGetValue(GPIO_PIN_NUMBER_21);
-		printf("pressure value1 : %d \n", p[0]);
-		printf("pressure value2 : %d \n", p[1]);
-		printf("pressure value3 : %d \n", p[2]);
-		printf("pressure value4 : %d \n", p[3]);
-		printf("pressure value5 : %d \n", p[4]);
+//		printf("pressure value1 : %d \n", p[0]);
+//		printf("pressure value2 : %d \n", p[1]);
+//		printf("pressure value3 : %d \n", p[2]);
+//		printf("pressure value4 : %d \n", p[3]);
+//		printf("pressure value5 : %d \n", p[4]);
 
 		p[5] = BspGpioGetValue(GPIO_PIN_NUMBER_23);
-		printf("pressure value5 : %d \n", p[5]);
 		pressure = p[0] + p[1] + p[2] + p[3] + p[4] + p[5];
-//		pressure = p[5];
 		illuminance = BspGpioGetValue(GPIO_PIN_NUMBER_06);
 		measureSleepState(pressure, illuminance, smartphoneScreen);
 		printf("Sleep State : %d \n", sleepState);
 		ThreadDelay(200000000);
 
-		int sound;
-		sound = BspGpioGetValue(GPIO_PIN_NUMBER_16);
-
+		//int sound2;
+		//sound2 = BspGpioGetValue(GPIO_PIN_NUMBER_16);
 		//sound = testSnoring();
 		printf("sound : %d \n", sound);
 		measureSnoring(sound);
+
+		printf("Sleep Posture : %d \n", sleepPosture);
+		if(sleepState == 0)
+			sleepPosture = 50 + postureValue;
+		else
+			sleepPosture = 70 + postureValue;
 
 //		if(vibration == ON)
 //		{
@@ -157,14 +147,7 @@ void *UpdateValue2(void* arg)
 
 void *UpdateValue3(void* arg)
 {
-	while(1)
-	{
-		int postureValue;//get a value through TCP/IP
-		if(sleepState == 0)
-			sleepPosture = 50 + postureValue;
-		else
-			sleepPosture = 70 + postureValue;
-	}
+	serverCommunication();
 }
 
 
@@ -189,11 +172,11 @@ UserAppInit(void)
 
 	pthread_mutex_init(&Locker1,NULL);
 	pthread_mutex_init(&Locker2,NULL);
-	//pthread_mutex_init(&Locker3,NULL);
+	pthread_mutex_init(&Locker3,NULL);
 	pthread_create(&UpdThread1, NULL, UpdateValue1, NULL);
 	pthread_create(&UpdThread2, NULL, UpdateValue2, NULL);
-	//pthread_create(&UpdThread3, NULL, UpdateValue3, NULL);
-
+	pthread_create(&UpdThread3, NULL, UpdateValue3, NULL);
+	//serverCommunication();
 	hal_main();
 
 }
