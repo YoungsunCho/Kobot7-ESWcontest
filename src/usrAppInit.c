@@ -19,6 +19,7 @@
 #include "measureSleepState.h"
 #include "measureSnoring.h"
 #include "serverCommunication.h"
+#include "serverSoundSensor.h"
 
 #define GPIO_GPFSEL_IN 0x00
 #define GPIO_GPFSEL_OUT 0x01
@@ -48,6 +49,7 @@ int sleepState=0;
 int smartphoneScreen=0;
 int snoring=0;
 int vibration=0;
+int sound=-1;
 int preSound=0;
 int sleepPosture=0;
 int postureValue=0;//get a value through TCP/IP
@@ -84,7 +86,7 @@ int testSnoring()
 
 void *UpdateValue1(void* arg)
 {
-
+	serverSoundSensor();
 }
 
 void *UpdateValue2(void* arg)
@@ -110,9 +112,8 @@ void *UpdateValue2(void* arg)
 		printf("Sleep State : %d \n", sleepState);
 		ThreadDelay(200000000);
 
-		int sound;
-		sound = BspGpioGetValue(GPIO_PIN_NUMBER_16);
-
+		//int sound2;
+		//sound2 = BspGpioGetValue(GPIO_PIN_NUMBER_16);
 		//sound = testSnoring();
 		printf("sound : %d \n", sound);
 		measureSnoring(sound);
