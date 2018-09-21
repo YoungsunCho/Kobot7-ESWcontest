@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradation"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#110033"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="#110033"
+                android:orientation="vertical"
+                android:id="@+id/sleepingButton">
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_access_alarm_black_24dp"
+                    android:id="@+id/sleeping_img"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="sleeping time"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/sleeping_text" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_gravity="center"
+                    android:foregroundGravity="bottom"
+                    android:background="#FFFFFF"
+                    android:id="@+id/sleeping_underbar" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="#110033"
+                android:orientation="vertical"
+                android:id="@+id/postureButton">
+
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#110033"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_brightness_2_black_24dp"
+                    android:id="@+id/posture_img"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="posture"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/posture_text" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_gravity="center"
+                    android:foregroundGravity="bottom"
+                    android:id="@+id/posture_underbar" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="#110033"
+                android:orientation="vertical"
+                android:id="@+id/snoreButton">
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#110033"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_hearing_black_24dp"
+                    android:id="@+id/snore_img"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="snore"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/snore_text" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_gravity="center"
+                    android:foregroundGravity="bottom"
+                    android:id="@+id/snore_underbar"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="#110033"
+                android:orientation="vertical"
+                android:id="@+id/settingButton">
+                <ImageView
+                    android:layout_width="55dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:backgroundTint="#110033"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_settings_black_24dp"
+                    android:id="@+id/setting_img"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="settings"
+                    android:layout_gravity="center"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/setting_text" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_gravity="center"
+                    android:foregroundGravity="bottom"
+                    android:id="@+id/setting_underbar"/>
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/FragmentView"
+                android:layout_marginBottom="50dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
