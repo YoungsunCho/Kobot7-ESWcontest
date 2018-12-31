@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/gif"
+                android:layout_width="match_parent"
+                android:layout_height="231.5dp"
+                android:src="@drawable/background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#CCCCCC">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="200dp"
+                            android:layout_height="135dp"
+                            android:src="@drawable/img1"
+                            android:id="@+id/img1"/>
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
+                            android:padding="5dp"
+                            android:id="@+id/text1"
+                            android:text="아침기상이 유난히 힘들다면?"
+                            android:textStyle="bold"
+                            android:background="#FFFFFF"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="200dp"
+                            android:layout_height="135dp"
+                            android:src="@drawable/img2"
+                            android:id="@+id/img2" />
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
+                            android:text="가장 좋은 수면자세는?"
+                            android:textStyle="bold"
+                            android:padding="5dp"
+                            android:id="@+id/text2"
+                            android:background="#FFFFFF"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="200dp"
+                            android:layout_height="135dp"
+                            android:background="@drawable/img3"/>
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
+                            android:padding="5dp"
+                            android:scaleType="fitXY"
+                            android:id="@+id/text3"
+                            android:text="코골이 때문에 잠 못드는 당신에게"
+                            android:textStyle="bold"
+                            android:background="#FFFFFF"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="200dp"
+                            android:layout_height="135dp"
+                            android:background="@drawable/img4"
+                            android:id="@+id/img4" />
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
+                            android:text="당잠사 FAQ"
+                            android:textStyle="bold"
+                            android:padding="5dp"
+                            android:id="@+id/text4"
+                            android:background="#FFFFFF"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="200dp"
+                            android:layout_height="135dp"
+                            android:id="@+id/img5"
+                            android:background="@drawable/img5" />
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
+                            android:padding="5dp"
+                            android:text="오래 잤는데도 수면 장애라구요?"
+                            android:textStyle="bold"
+                            android:id="@+id/text5"
+                            android:background="#FFFFFF"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="200dp"
+                            android:layout_height="135dp"
+                            android:id="@+id/img6"
+                            android:background="@drawable/img6" />
+                        <TextView
+                            android:layout_width="200dp"
+                            android:layout_height="50dp"
+                            android:text="수면장애란???"
+                            android:textStyle="bold"
+                            android:padding="5dp"
+                            android:id="@+id/text6"
+                            android:background="#FFFFFF"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:layout_marginTop="5dp"
+                    android:padding="8dp"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:text="바로가기"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:textColor="#000000"
+                        />
+                    <TextView
+                        android:layout_width="400dp"
+                        android:layout_height="0.5dp"
+                        android:background="#CCCCCC"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/background"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="25dp"
+                            android:text="당신이 잠든 사이에 랜딩 페이지"/>
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="400dp"
+                        android:layout_height="0.5dp"
+                        android:background="#CCCCCC"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/embedded"
+                            android:id="@+id/imbedded"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="25dp"
+                            android:id="@+id/imbedded1"
+                            android:text="임베디드 소프트웨어 경진대회 홈페이지"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="내 정보"
+                android:textSize="15dp"
+                android:textColor="#AAAAAA"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="3dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="계정 정보 보기"
+                android:textSize="18dp"/>
+            <TextView
+                android:layout_width="400dp"
+                android:layout_height="0.5dp"
+                android:background="#CCCCCC"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="기본설정"
+                android:textSize="15dp"
+                android:textColor="#AAAAAA"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="3dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="센서 설정"
+                android:textSize="18dp"
+                android:id="@+id/sensor"/>
+            <TextView
+                android:layout_width="400dp"
+                android:layout_height="0.5dp"
+                android:background="#CCCCCC"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="서비스 문의하기"
+                android:textSize="15dp"
+                android:textColor="#AAAAAA"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="3dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="문의하기 kobot7@naver.com"
+                android:textSize="18dp" />
+            <TextView
+                android:layout_width="400dp"
+                android:layout_height="0.5dp"
+                android:background="#CCCCCC"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FAQ"
+                android:textSize="18dp" />
+            <TextView
+                android:layout_width="400dp"
+                android:layout_height="0.5dp"
+                android:background="#CCCCCC"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="앱 정보"
+                android:textSize="15dp"
+                android:textColor="#AAAAAA"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="3dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="버전 정보       1.0.1"
+                android:textSize="18dp" />
+            <TextView
+                android:layout_width="400dp"
+                android:layout_height="0.5dp"
+                android:background="#CCCCCC"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="개발자 정보"
+                android:textSize="15dp"
+                android:textColor="#AAAAAA"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="3dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="안드로이드"
+                    android:textSize="18dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="박지희"
+                    android:layout_weight="1"
+                    android:textSize="18dp" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="400dp"
+                android:layout_height="0.5dp"
+                android:background="#CCCCCC"
+                android:layout_marginTop="5dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="하드웨어"
+                    android:textSize="18dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="윤지은 조영선"
+                    android:layout_weight="1"
+                    android:textSize="18dp" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="400dp"
+                android:layout_height="0.5dp"
+                android:background="#CCCCCC"
+                android:layout_marginTop="5dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="랜딩 페이지"
+                    android:textSize="18dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="조경문"
+                    android:layout_weight="1"
+                    android:textSize="18dp" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="400dp"
+                android:layout_height="0.5dp"
+                android:background="#CCCCCC"
+                android:layout_marginTop="5dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="서버관리"
+                    android:textSize="18dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="윤지은 조영선"
+                    android:layout_weight="1"
+                    android:textSize="18dp" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="400dp"
+                android:layout_height="0.5dp"
+                android:background="#CCCCCC"
+                android:layout_marginTop="5dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="소속"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="국민대학교 소프트웨어 융합대학"
+                    android:textSize="18dp" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="로그아웃"
+                android:textSize="18dp"
+                android:layout_margin="1dp"
+                android:textStyle="bold"
+                android:id="@+id/logOut"
+                android:gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

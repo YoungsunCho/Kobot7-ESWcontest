@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <tabs>
+        <tab
+            id="@+id/tab_call_home"
+            icon="@drawable/ic_home_black_24dp"
+            inActiveColor="#Ffffff"
+            activeColor="#770088"
+            />
+        <tab
+            id="@+id/tab_call_chart"
+            icon="@drawable/ic_show_chart_black_24dp"
+            inActiveColor="#FFFFFF"
+            activeColor="#770088"/>
+        <tab
+            id="@+id/tab_call_calendar"
+            icon="@drawable/ic_today_black_24dp"
+            inActiveColor="#FFFFFF"
+            activeColor="#770088"
+            />
+        <tab
+            id="@+id/tab_call_user"
+            icon="@drawable/ic_notifications_none_black_24dp"
+            inActiveColor="#Ffffff"
+            activeColor="#770088"
+            />
+
+    </tabs>
+</PreferenceScreen>

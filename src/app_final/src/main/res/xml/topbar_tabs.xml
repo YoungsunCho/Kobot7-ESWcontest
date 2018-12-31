@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <tabs>
+        <tab
+            id="@+id/tab_sleepingTime"
+            title="수면시간"
+            icon="@drawable/ic_brightness_3_black_24dp"
+            inActiveColor="#888888"
+            activeColor="#EEEEEE"
+            barColorWhenSelected="#880099"
+            />
+        <tab
+            id="@+id/tab_snore"
+            icon="@drawable/ic_notifications_none_black_24dp"
+            title="코골이"
+            inActiveColor="#888888"
+            activeColor="#EEEEEE"
+            barColorWhenSelected="#990066"
+            />
+        <tab
+            id="@+id/tab_posture"
+            title="수면자세"
+            icon="@drawable/ic_hotel_black_24dp"
+            inActiveColor="#888888"
+            activeColor="#EEEEEE"
+            barColorWhenSelected="#770066"
+            />
+    </tabs>
+</PreferenceScreen>

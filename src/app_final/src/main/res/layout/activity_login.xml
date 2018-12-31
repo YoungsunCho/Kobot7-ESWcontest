@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="#CCCCCC">
+
+    <EditText
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:hint="이메일"
+        android:gravity="center"/>
+
+    <EditText
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호"
+        android:inputType="textPassword"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="310dp"
+        android:layout_height="50dp"
+        android:text="로그인"
+        android:background="@color/colorAccent"
+        android:textColor="#FFFFFF"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인 정보를 잊어버리셨나요?"
+        android:textColor="@color/colorAccent"/>
+</LinearLayout>
